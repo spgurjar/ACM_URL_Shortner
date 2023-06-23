@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js" ,
+    "build" : "npm i"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"

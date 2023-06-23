@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const ShortUrl = require('./models/shortUrl');
+const ShortUrl = require('./ACMmdls/shortUrl');
 
 const app = express();
 
@@ -28,7 +28,7 @@ app.get('/', async (req, res) => {
   } else {
     shortUrls = await ShortUrl.find().exec();
   }
-  res.render('index', { shortUrls });
+  res.render('url', { shortUrls });
 });
 
 app.post('/shortUrls', async (req, res) => {

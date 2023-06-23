@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "devStart": "nodemon server.js" ,
+    "devStart": "nodemon websrvr.js" ,
     "build" : "npm i"
   },
   "devDependencies": {

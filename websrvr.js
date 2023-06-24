@@ -1,19 +1,25 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const ShortUrl = require('./ACMmdls/shortUrl');
+const dotenv = require('dotenv').config()
 
 
 const app = express();
 
-const DB = 'mongodb+srv://ShyamPatel25:Shyam2500@cluster0.ljaoso7.mongodb.net/ACMdatabase?retryWrites=true&w=majority'
 
-mongoose.connect(DB , {
+
+
+mongoose.connect(process.env.MONGODB_URI , {
   useNewUrlParser: true,
-  useUnifiedTopology: true
-}).catch(err => {
+  useUnifiedTopology: true,
+  
+}) .catch(err => {
   console.error('Error connecting to the database:', err);
   process.exit(1);
 });
+
+// importing models 
+// require('./ACMmdls/shortUrl') 
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));

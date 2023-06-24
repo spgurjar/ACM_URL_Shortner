@@ -2,9 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const ShortUrl = require('./ACMmdls/shortUrl');
 
+
 const app = express();
 
-mongoose.connect('mongodb://0.0.0.0:27017/urlShortener', {
+const DB = 'mongodb+srv://ShyamPatel25:Shyam2500@cluster0.ljaoso7.mongodb.net/ACMdatabase?retryWrites=true&w=majority'
+
+mongoose.connect(DB , {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).catch(err => {

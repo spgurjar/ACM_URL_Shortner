@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const ShortUrl = require('./ACMmdls/shortUrl');
-const dotenv = require('dotenv').config()
+const dotenv = require('dotenv').config();
 
 
 const app = express();
@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB_URI , {
 
 // importing models 
 // require('./ACMmdls/shortUrl') 
-
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 

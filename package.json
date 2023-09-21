@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "start" : "node websrvr.js",
     "devStart": "nodemon websrvr.js",
     "build": "npm i"
   },
